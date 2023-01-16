@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tarefas } from './tabela/interfaces/tarefa.inteface';
+import { Tarefa } from './tabela/interfaces/tarefa.inteface';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import { Tarefas } from './tabela/interfaces/tarefa.inteface';
 })
 export class AppComponent implements OnInit{
 
-  tarefas: Tarefas[] = [
+  tarefas: Tarefa[] = [
     {
       nome: 'tarefa1',
       data: new Date('01-17-2023')
@@ -24,7 +24,12 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  deleteTarefa(index: any) {
+  adicionaTarefa(tarefa: Tarefa){
+    this.tarefas.push(tarefa)
+    
+  }
+
+  deletaTarefa(index: any) {
     this.tarefas.splice(index, 1);
   }
   

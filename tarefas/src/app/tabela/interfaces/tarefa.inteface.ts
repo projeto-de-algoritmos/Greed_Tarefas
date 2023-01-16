@@ -1,4 +1,4 @@
-export interface Tarefas {
+export interface Tarefa {
     nome: string;
     data: Date;
 }

@@ -1,9 +1,11 @@
 <div class="flex flex-col w-full my-4 mx-32">
-    <app-form></app-form>
+    <app-form
+    (emitTarefa)="adicionaTarefa($event)"
+    ></app-form>
 
     <app-tabela 
     [tarefas]="tarefas"
-    (emitExcluir)="deleteTarefa($event)"
+    (emitExcluir)="deletaTarefa($event)"
     ></app-tabela>
 
 </div>

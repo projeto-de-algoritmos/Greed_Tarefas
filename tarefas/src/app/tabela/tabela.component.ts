@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Tarefas } from './interfaces/tarefa.inteface';
+import { Tarefa } from './interfaces/tarefa.inteface';
 
 @Component({
   selector: 'app-tabela',
@@ -8,7 +8,7 @@ import { Tarefas } from './interfaces/tarefa.inteface';
 })
 export class TabelaComponent implements OnInit {
 
-  @Input() tarefas: Tarefas[] = []
+  @Input() tarefas: Tarefa[] = []
   @Output() emitExcluir = new EventEmitter<any>();
 
   constructor() { }
