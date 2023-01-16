@@ -21,14 +21,12 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
     this.novaTarefa = this._fb.group({
       nome: ['', Validators.required],
+      duracao: [ '' , [Validators.required, Validators.pattern("^[0-9]*$")]],
       data: [Validators.required]
     });
   }
 
   adicionar(){
-
-    console.log(this.novaTarefa.controls['data']);
-    
     if(this.novaTarefa.valid){
       let tarefa = {
         nome: this.novaTarefa.controls['nome'].value,

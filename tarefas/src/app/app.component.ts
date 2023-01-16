@@ -11,10 +11,12 @@ export class AppComponent implements OnInit{
   tarefas: Tarefa[] = [
     {
       nome: 'tarefa1',
+      duracao: 2,
       data: new Date('01-17-2023')
     },
     {
       nome: 'tarefa2',
+      duracao: 5,
       data: new Date('01-18-2023')
     }
   ]
@@ -31,6 +33,11 @@ export class AppComponent implements OnInit{
 
   deletaTarefa(index: any) {
     this.tarefas.splice(index, 1);
+  }
+
+  recalcular(){
+    console.log('recalcular');
+    
   }
   
 }
