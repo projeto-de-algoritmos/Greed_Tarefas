@@ -22,7 +22,8 @@ export class FormComponent implements OnInit {
     this.novaTarefa = this._fb.group({
       nome: ['', Validators.required],
       duracao: [ '' , [Validators.required, Validators.pattern("^[0-9]*$")]],
-      data: [Validators.required]
+      data: [Validators.required],
+      atraso: 0
     });
   }
 
@@ -30,7 +31,9 @@ export class FormComponent implements OnInit {
     if(this.novaTarefa.valid){
       let tarefa = {
         nome: this.novaTarefa.controls['nome'].value,
-        data: this.novaTarefa.controls['data'].value
+        duracao: this.novaTarefa.controls['duracao'].value,
+        data: this.novaTarefa.controls['data'].value,
+        atraso: 0
       }
       this.emitTarefa.emit(tarefa);
       this.novaTarefa.reset();
