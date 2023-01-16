@@ -1,0 +1,35 @@
+<div class="text-lg font-semibold text-blue-600 my-5">
+    Tarefas a serem realizadas
+</div>
+<div class="grid grid-cols-6 w-128">
+    <div class="flex flex-col border-t-2 border-b-2 border-black">
+        <span class="flex justify-center font-semibold">Ordem</span>
+        <div *ngFor="let item of [].constructor(tarefas.length); let i = index"
+        class="flex justify-center border-t-2 border-black h-8 items-center">
+            {{i+1}}
+        </div>
+    </div>
+    <div class="col-span-2 flex flex-col justify-center border-t-2 border-b-2 border-black">
+        <span class="flex justify-center font-semibold">Nome</span>
+        <div *ngFor="let tarefa of tarefas"
+        class="flex justify-center border-t-2 border-black h-8 items-center">
+            {{tarefa.nome}}
+        </div>
+    </div>
+    <div class="col-span-2 flex flex-col justify-center border-t-2 border-b-2 border-black">
+        <span class="flex justify-center font-semibold">Data limite</span>
+        <div *ngFor="let tarefa of tarefas"
+        class="flex justify-center border-t-2 border-black h-8 items-center">
+            {{tarefa.data}}
+        </div>
+    </div>
+    <div class="flex flex-col border-t-2 border-b-2 border-black">
+        <span class="flex justify-center font-semibold ">Excluir</span>
+        <div *ngFor="let item of [].constructor(tarefas.length); let i = index"
+            class="flex justify-center border-t-2 border-black h-8 items-center">
+            <button>
+                <mat-icon style="font-size: 20px;">delete</mat-icon>  
+            </button>
+        </div>
+    </div>
+</div>
