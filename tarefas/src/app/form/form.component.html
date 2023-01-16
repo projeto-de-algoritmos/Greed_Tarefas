@@ -1,0 +1,38 @@
+<div class="text-lg font-semibold text-blue-600 mb-5">
+    Adicionar uma nova tarefa
+</div>
+<div class="flex flex-row w-full justify-start">
+    <div class="flex flex-col mr-6">
+        Nome
+        <mat-form-field appearance="outline">
+            <mat-label>Insira um nome para a tarefa</mat-label>
+            <input matInput [(ngModel)]="nome">
+        </mat-form-field>
+    </div>
+    <div class="w-52">
+        Data
+        <mat-form-field appearance="outline">
+            <mat-label>Insira o prazo limite</mat-label>
+            <input matInput [matDatepicker]="datepicker">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+              <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancelar</button>
+                <button 
+                class="bg-blue-700 text-white px-2 py-1 ml-2 rounded-md" 
+                mat-raised-button matDatepickerApply>
+                    Aplicar
+                </button>
+              </mat-datepicker-actions>
+            </mat-datepicker>
+          </mat-form-field>
+    </div>
+
+    <div class="flex self-center ml-20">
+        <button class="bg-blue-700 text-white px-2 py-1 ml-2 rounded-lg">
+            Adicionar
+        </button>
+    </div>
+
+</div>
