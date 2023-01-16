@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Tarefas } from './interfaces/tarefa.inteface';
 
 @Component({
@@ -8,20 +8,17 @@ import { Tarefas } from './interfaces/tarefa.inteface';
 })
 export class TabelaComponent implements OnInit {
 
-  @Input() tarefas: Tarefas[] = [
-    {
-      nome: 'tarefa1',
-      data: new Date('17/01/2023')
-    },
-    {
-      nome: 'tarefa2',
-      data: new Date('18/01/2023')
-    }
-  ]
+  @Input() tarefas: Tarefas[] = []
+  @Output() emitExcluir = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.tarefas[0].data);
+  }
+
+  delete(index:any) {
+    this.emitExcluir.emit(index)
   }
 
 }

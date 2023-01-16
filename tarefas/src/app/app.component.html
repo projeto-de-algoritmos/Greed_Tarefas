@@ -1,6 +1,9 @@
 <div class="flex flex-col w-full my-4 mx-32">
     <app-form></app-form>
 
-    <app-tabela></app-tabela>
+    <app-tabela 
+    [tarefas]="tarefas"
+    (emitExcluir)="deleteTarefa($event)"
+    ></app-tabela>
 
 </div>
