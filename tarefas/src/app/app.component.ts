@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tarefa } from './tabela/interfaces/tarefa.inteface';
+import { Tarefa } from './interfaces/tarefa.inteface';
 
 @Component({
   selector: 'app-root',

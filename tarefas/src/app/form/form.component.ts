@@ -10,6 +10,9 @@ import { DateAdapter } from '@angular/material/core';
 export class FormComponent implements OnInit {
 
   novaTarefa!: FormGroup;
+  horas: number[] = [];
+
+  selectedHour!: number;
 
   constructor(
     private dateAdapter: DateAdapter<any>,
@@ -19,6 +22,11 @@ export class FormComponent implements OnInit {
   @Output() emitTarefa = new EventEmitter<any>();
 
   ngOnInit(): void {
+
+    for (let i = 0; i < 24; i++) {
+      this.horas.push(i)
+    }
+
     this.novaTarefa = this._fb.group({
       nome: ['', Validators.required],
       duracao: [ '' , [Validators.required, Validators.pattern("^[0-9]*$")]],
@@ -42,6 +50,17 @@ export class FormComponent implements OnInit {
         control.setErrors(null);
       });
     }
+  }
+
+  setHoras(event: any){
+
+    let data: Date = this.novaTarefa.controls['data'].value
+    data.setHours(event.value);
+    
+    this.novaTarefa.patchValue({
+      data: data, 
+      // formControlName2: myValue2 (can be omitted)
+    });
   }
 
 }

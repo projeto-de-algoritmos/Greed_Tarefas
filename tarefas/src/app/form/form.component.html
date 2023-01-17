@@ -16,24 +16,34 @@
             <input matInput formControlName="duracao">
         </mat-form-field>
     </div>
-    <div class="flex flex-col w-80">
-        Data
-        <mat-form-field appearance="outline">
-            <mat-label>Insira o prazo limite</mat-label>
-            <input matInput [matDatepicker]="datepicker" formControlName="data">
-            <mat-hint>DD/MM/YYYY</mat-hint>
-            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
-            <mat-datepicker #datepicker>
-              <mat-datepicker-actions>
-                <button mat-button matDatepickerCancel>Cancelar</button>
-                <button 
-                class="bg-blue-700 text-white px-2 py-1 ml-2 rounded-md" 
-                mat-raised-button matDatepickerApply>
-                    Aplicar
-                </button>
-              </mat-datepicker-actions>
-            </mat-datepicker>
-          </mat-form-field>
+    <div class="flex flex-row">
+        <div class="flex flex-col w-80">
+            Prazo limite
+            <mat-form-field appearance="outline">
+                <mat-label>Data</mat-label>
+                <input matInput [matDatepicker]="datepicker" formControlName="data">
+                <mat-hint>DD/MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                <mat-datepicker #datepicker>
+                  <mat-datepicker-actions>
+                    <button mat-button matDatepickerCancel>Cancelar</button>
+                    <button 
+                    class="bg-blue-700 text-white px-2 py-1 ml-2 rounded-md" 
+                    mat-raised-button matDatepickerApply>
+                        Aplicar
+                    </button>
+                  </mat-datepicker-actions>
+                </mat-datepicker>
+              </mat-form-field>
+        </div>
+        <mat-form-field class="flex mt-6 ml-4" appearance="outline">
+            <mat-label>Horas</mat-label>
+            <mat-select (selectionChange)="setHoras($event)" name="food">
+              <mat-option *ngFor="let hora of horas" [value]="hora">
+                {{hora}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
     </div>
 
     <div class="flex mt-6 mb-4">

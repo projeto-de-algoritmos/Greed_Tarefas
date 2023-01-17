@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Tarefa } from './interfaces/tarefa.inteface';
+import { Tarefa } from '../interfaces/tarefa.inteface';
 
 @Component({
   selector: 'app-tabela',

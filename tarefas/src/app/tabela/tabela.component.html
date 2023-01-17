@@ -27,7 +27,7 @@
         <span class="flex justify-center font-medium">Data limite</span>
         <div *ngFor="let tarefa of tarefas"
         class="flex justify-center border-t-2 border-gray-600 h-8 items-center">
-            {{tarefa.data | date:'dd/MM/YYYY'}}
+            {{tarefa.data | date:'dd/MM/YYYY HH:mm'}}
         </div>
     </div>
     <div class="col-span-2 flex flex-col justify-center border-t-2 border-b-2 border-gray-600">
